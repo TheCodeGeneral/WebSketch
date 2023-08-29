@@ -1,9 +1,17 @@
-.grid-column {
-    border: 2px solid black;
-    width: 16px;
-    height: 16px;
+:root {
+    --grid-size: 800px;
+    --grid-border-width: 1px;
+}
+.pixel {
+    background-color: white;
+    border: 3px solid black;
+    margin: -3px;
 }
 
 #grid {
     display: flex;
+    flex-wrap: wrap;
+    width: var(--grid-size);
+    height: var(--grid-size);
+    background-color: black;
 }
