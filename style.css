@@ -1,0 +1,9 @@
+.grid-column {
+    border: 2px solid black;
+    width: 16px;
+    height: 16px;
+}
+
+#grid {
+    display: flex;
+}
