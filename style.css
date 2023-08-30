@@ -1,11 +1,11 @@
 :root {
-    --grid-size: 800px;
-    --grid-border-width: 1px;
+    --grid-size: 500px;
+    --grid-border-width: 2px;
 }
 .pixel {
     background-color: white;
-    border: 3px solid black;
-    margin: -3px;
+    border: var(--grid-border-width) solid black;
+    margin: calc(0px - var(--grid-border-width));
 }
 
 #grid {
@@ -14,4 +14,10 @@
     width: var(--grid-size);
     height: var(--grid-size);
     background-color: black;
+}
+
+#grid-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
