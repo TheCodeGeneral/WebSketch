@@ -21,3 +21,62 @@
     align-items: center;
     justify-content: center;
 }
+#color-palette {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 180px;
+}
+.color {
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+}
+#color-one {    
+    background-color: #f44336;
+}
+#color-two {    
+    background-color: #e81e63;
+}
+#color-three {    
+    background-color: #9c27b0;
+}
+#color-four {    
+    background-color: #673ab7;
+}
+#color-five {    
+    background-color: #3f51b5;
+}
+#color-six {    
+    background-color: #2196f3;
+}
+#color-seven {    
+    background-color: #03a9f4;
+}
+#color-eight {    
+    background-color: #00bcd4;
+}
+#color-nine {    
+    background-color: #009688;
+}
+#color-ten {    
+    background-color: #4caf50;
+}
+#color-eleven {    
+    background-color: #8bc34a;
+}
+#color-twelve {    
+    background-color: #cddc39;
+}
+#color-thirteen {    
+    background-color: #ffeb3b;
+}
+#color-fourteen {    
+    background-color: #ffc107;
+}
+#color-fifteen {    
+    background-color: #ff9800;
+}
+#color-sixteen {    
+    background-color: #ff5722;
+}
