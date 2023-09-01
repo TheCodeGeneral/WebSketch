@@ -22,6 +22,7 @@ function generateGrid(numRows) {
     }
 
     document.getElementById('grid-wrapper').appendChild(grid);
+    setGridEventListener();
 }
 
 function drawColor(pixel) {
@@ -37,6 +38,18 @@ function changeColor(color) {
     document.getElementById('color-picker').value = newColor;
 }
 
+function adjustGrid(size) {
+    document.getElementById('grid').remove();
+    generateGrid(size);
+    setGridEventListener();
+}
+
+function setGridEventListener() {
+    document.querySelectorAll('#grid > div').forEach(pixel => {
+        pixel.addEventListener('mouseenter', drawColor);
+    });
+}
+
 // Source https://stackoverflow.com/questions/1740700/how-to-get-hex-color-value-rather-than-rgb-value
 const rgba2hex = (rgba) =>
   `#${rgba
@@ -49,11 +62,8 @@ const rgba2hex = (rgba) =>
         .replace("NaN", ""),
     ).join("")}`;
 
-document.querySelectorAll('#grid > div').forEach(pixel => {
-    pixel.addEventListener('mouseenter', drawColor);
-});
-
-document.querySelectorAll('.color').forEach(color => {
+    document.querySelectorAll('.color').forEach(color => {
     color.addEventListener('click', changeColor);
 });
 
+document.getElementById('grid-slider').addEventListener('change', (e) => adjustGrid(e.target.value));

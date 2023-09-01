@@ -80,3 +80,8 @@
 #color-sixteen {    
     background-color: #ff5722;
 }
+
+input[type="range"] {
+  width: 200px;
+  margin: 0;
+}
