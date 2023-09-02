@@ -67,3 +67,8 @@ const rgba2hex = (rgba) =>
 });
 
 document.getElementById('grid-slider').addEventListener('change', (e) => adjustGrid(e.target.value));
+
+// Update the size of the grid based on the slider value
+document.getElementById('grid-slider').addEventListener('input', (e) => {
+    document.getElementById('current-size').textContent = e.target.value + 'x' + e.target.value;
+});
