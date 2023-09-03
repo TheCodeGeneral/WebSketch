@@ -13,7 +13,7 @@
     flex-wrap: wrap;
     width: var(--grid-size);
     height: var(--grid-size);
-    background-color: black;
+    border: 2px solid black;
 }
 
 #grid-wrapper {
@@ -84,4 +84,11 @@
 input[type="range"] {
   width: 200px;
   margin: 0;
+}
+
+#grid-size-wrapper {
+    display: flex;
+}
+#grid-border-width {
+    width: 30px;
 }

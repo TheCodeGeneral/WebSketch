@@ -1,5 +1,6 @@
-generateGrid(16);
+let gridSize = 16;
 
+generateGrid(gridSize);
 
 function generateGrid(numRows) {
     // Create div to put pixels in
@@ -8,14 +9,14 @@ function generateGrid(numRows) {
 
     // Get css custom property for grid size
     let gridSize = parseInt(getComputedStyle(document.documentElement,null).getPropertyValue('--grid-size').slice(0,-2));
+    // Calculate and set pixel size based on grid size
+    let pixelSize = gridSize / numRows;
 
     for(i = 0; i < numRows * numRows; i++) {
         // Create pixel
         pixel = document.createElement('div');
         pixel.className = 'pixel';
 
-        // Calculate and set pixel size based on grid size
-        let pixelSize = gridSize / numRows;
         pixel.setAttribute('style', `width: ${pixelSize}px; height: ${pixelSize}px;`);
         // Add pixel to grid
         grid.appendChild(pixel);
@@ -26,7 +27,7 @@ function generateGrid(numRows) {
 }
 
 function drawColor(pixel) {
-    if(pixel.which) {
+    if(pixel.buttons || pixel.type == 'click') {
         let color = document.getElementById('color-picker').value;
         pixel.target.style.backgroundColor = color;
     }
@@ -47,7 +48,16 @@ function adjustGrid(size) {
 function setGridEventListener() {
     document.querySelectorAll('#grid > div').forEach(pixel => {
         pixel.addEventListener('mouseenter', drawColor);
+        pixel.addEventListener('click', drawColor);
     });
+}
+
+function changeBorder(size) {
+    document.documentElement.style.setProperty('--grid-border-width', `${size}px`);
+
+    document.querySelectorAll('.pixel').forEach(pixel => {
+        pixel.style.borderWidth = size + 'px';
+    })
 }
 
 // Source https://stackoverflow.com/questions/1740700/how-to-get-hex-color-value-rather-than-rgb-value
@@ -70,5 +80,8 @@ document.getElementById('grid-slider').addEventListener('change', (e) => adjustG
 
 // Update the size of the grid based on the slider value
 document.getElementById('grid-slider').addEventListener('input', (e) => {
-    document.getElementById('current-size').textContent = e.target.value + 'x' + e.target.value;
+    gridSize = e.target.value;
+    document.getElementById('current-size').textContent = gridSize + 'x' + gridSize;
 });
+
+document.getElementById('grid-border-width').addEventListener('change', e => changeBorder(e.target.value));
