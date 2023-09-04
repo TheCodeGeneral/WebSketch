@@ -2,10 +2,29 @@
     --grid-size: 500px;
     --grid-border-width: 2px;
 }
+
 .pixel {
     background-color: white;
     border: var(--grid-border-width) solid black;
     margin: calc(0px - var(--grid-border-width));
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+#control-panel {
+    display: flex;
+
+}
+
+#content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 50px;
 }
 
 #grid {
@@ -21,74 +40,116 @@
     align-items: center;
     justify-content: center;
 }
+
 #color-palette {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    width: 180px;
+    width: 200px;
 }
+#color-picker {
+    width: 60px;
+    height: 30px;
+    border: none;
+    padding: 0px;
+    background-color: rgba(0,0,0,0);
+}
+
 .color {
     width: 10px;
     height: 10px;
     border: 1px solid black;
 }
+
 #color-one {    
+    background-color: #000000;
+}
+
+#color-two {    
+    background-color: #ffffff;
+}
+
+#color-three {    
     background-color: #f44336;
 }
-#color-two {    
+
+#color-four {    
     background-color: #e81e63;
 }
-#color-three {    
+
+#color-five {    
     background-color: #9c27b0;
 }
-#color-four {    
+
+#color-six {    
     background-color: #673ab7;
 }
-#color-five {    
+
+#color-seven {    
     background-color: #3f51b5;
 }
-#color-six {    
+
+#color-eight {    
     background-color: #2196f3;
 }
-#color-seven {    
+
+#color-nine {    
     background-color: #03a9f4;
 }
-#color-eight {    
+
+#color-ten {    
     background-color: #00bcd4;
 }
-#color-nine {    
+
+#color-eleven {    
     background-color: #009688;
 }
-#color-ten {    
+
+#color-twelve {    
     background-color: #4caf50;
 }
-#color-eleven {    
+
+#color-thirteen {    
     background-color: #8bc34a;
 }
-#color-twelve {    
+
+#color-fourteen {    
     background-color: #cddc39;
 }
-#color-thirteen {    
+
+#color-fifteen {    
     background-color: #ffeb3b;
 }
-#color-fourteen {    
+
+#color-sixteen {    
     background-color: #ffc107;
 }
-#color-fifteen {    
+
+#color-seventeen {    
     background-color: #ff9800;
 }
-#color-sixteen {    
+
+#color-eighteen {    
     background-color: #ff5722;
 }
 
 input[type="range"] {
-  width: 200px;
+  width: 150px;
   margin: 0;
 }
 
-#grid-size-wrapper {
+.small-wrapper {
     display: flex;
+    align-items: center;
+    gap: 15px;
 }
+
 #grid-border-width {
     width: 30px;
+}
+
+#control-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

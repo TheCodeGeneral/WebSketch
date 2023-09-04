@@ -11,7 +11,10 @@
 <body>
     <div id="content-wrapper">
         <div id="control-panel">
-            <input id="color-picker" type="color">
+            <div class="small-wrapper" id="color-picker-wrapper">
+                <span>Current color:</span>
+                <input id="color-picker" type="color">
+            </div>
             <div id="color-palette">
                 <div class="color" id="color-one"></div>
                 <div class="color" id="color-two"></div>
@@ -29,8 +32,11 @@
                 <div class="color" id="color-fourteen"></div>
                 <div class="color" id="color-fifteen"></div>
                 <div class="color" id="color-sixteen"></div>
+                <div class="color" id="color-seventeen"></div>
+                <div class="color" id="color-eighteen"></div>
             </div>
-            <div id="grid-size-wrapper">
+            <div class="small-wrapper" id="grid-size-wrapper">
+                <p id="current-size">16x16</p>
                 <input id="grid-slider" type="range" value="16" min="16" max="128" list="values">
                 <datalist id="values">
                     <option value="16" label="16"></option>
@@ -38,9 +44,8 @@
                     <option value="64" label="64"></option>
                     <option value="128" label="128"></option>
                 </datalist>
-                <p id="current-size">16x16</p>
             </div>
-            <div id="grid-border-wrapper">
+            <div class="small-wrapper" id="grid-border-wrapper">
                 <span>Border width:</span>
                 <input id="grid-border-width" type="number" min="0" value="2">
             </div>
