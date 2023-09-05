@@ -12,6 +12,8 @@
 body, html {
     height: 100%;
     width: 100%;
+    margin: 0;
+    background-color: #212121;
 }
 
 #control-panel {
@@ -46,9 +48,10 @@ body, html {
     gap: 10px;
     flex-wrap: wrap;
     width: 200px;
+    justify-content: center;
 }
 #color-picker {
-    width: 60px;
+    flex: 1;
     height: 30px;
     border: none;
     padding: 0px;
@@ -152,4 +155,13 @@ input[type="range"] {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    height: var(--grid-size);
+}
+
+#control-panel > div {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #303030;
+    color: white;
 }
