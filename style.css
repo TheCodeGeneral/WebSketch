@@ -34,13 +34,15 @@ body, html {
     flex-wrap: wrap;
     width: var(--grid-size);
     height: var(--grid-size);
-    border: 2px solid black;
 }
 
 #grid-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
+    background-color: #303030;
+    border-radius: 8px;
 }
 
 #color-palette {
@@ -159,9 +161,21 @@ input[type="range"] {
 }
 
 #control-panel > div {
-    border: 1px solid black;
     border-radius: 8px;
     padding: 10px;
     background-color: #303030;
     color: white;
+}
+
+#control-panel > .button-wrapper {
+    padding: 0px;
+}
+
+#control-panel > div > button {
+    background-color: #303030;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    height: 30px;
 }

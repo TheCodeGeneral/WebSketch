@@ -85,3 +85,5 @@ document.getElementById('grid-slider').addEventListener('input', (e) => {
 });
 
 document.getElementById('grid-border-width').addEventListener('change', e => changeBorder(e.target.value));
+
+document.getElementById('clear-grid').addEventListener('click', () => adjustGrid(gridSize));
